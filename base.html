@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/main.css">
+		<title>My Wiki</title>
+	</head>
+
+	<body>
+		<a href="/wiki" class="main-title">
+			My Wiki
+		</a>
+		<div class="login-area">
+		<div class="login-link"><a href="/wiki/_history/{{pageUri}}">History</a></div>
+		<div class="login-link"><a href="/wiki/_edit/{{pageUri}}">{{edit}}</a></div>
+		<div class="login-link"><a href="{{loginText}}">{{userId}}</a></div>
+		<div class="login-link"><a href="/wiki/logout">Logout</a></div>
+		<div class="login-link"><a href="/wiki/signup">Sign Up</a></div>
+		</div>	
+		
+		<div id="content">
+			{% block content %}
+			{% endblock %}
+		</div>
+			
+	</body>
+
+</html>

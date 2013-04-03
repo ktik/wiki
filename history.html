@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{% set i = 1 %}
+{% for p in posts %}
+	<br>
+	{{p.lastModified.strftime('%Y-%m-%d %H:%M')}}<br>
+	{{p.pageContent}}
+	<div>
+		<a href='/wiki/{{p.pageUri}}?v={{i}}'>View</a>
+		<a href='/wiki/_edit/{{p.pageUri}}?v={{i}}'>Edit</a>
+	</div>
+	<br>
+	{% set i = i+ 1 %}
+{% endfor %}
+{% endblock %}
