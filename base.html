@@ -11,12 +11,16 @@
 			My Wiki
 		</a>
 		<div class="login-area">
-		<div class="login-link"><a href="/wiki/_history/{{pageUri}}">History</a></div>
-		<div class="login-link"><a href="/wiki/_edit/{{pageUri}}">{{edit}}</a></div>
-		<div class="login-link"><a href="{{loginText}}">{{userId}}</a></div>
-		<div class="login-link"><a href="/wiki/logout">Logout</a></div>
-		<div class="login-link"><a href="/wiki/signup">Sign Up</a></div>
+		<div><a class="login-link" href="/wiki/_history/{{pageUri}}">History</a></div>
+		{% if logged_in %}
+		<div><a class="login-link" href="/wiki/_edit/{{pageUri}}">Edit</a></div>
+		<div class="login-link">{{logged_in}} | <a class = "login-link" href="/wiki/logout">(Logout)</a></div>
+		{% else %}
+		<div><a class="login-link" href="/wiki/login">Login</a></div>
+		<div><a class="login-link" href="/wiki/signup">Sign Up</a></div>
+		{% endif %}
 		</div>	
+
 		
 		<div id="content">
 			{% block content %}
